@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+echo ""
+echo "    remove existing version of maxplanckr..."
+echo ""
+R -q -e 'packrat::clean("maxplanckr")'
+echo ""
+echo "    install maxplanckr from github repository..."
+echo ""
+R -q -e 'devtools::install_github("herreio/maxplanckr")'
