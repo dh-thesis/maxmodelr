@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
 Rscript packrat/init.R --bootstrap-packrat
+R -q -e 'devtools::install_gitlab("herreio/maxplanckr")'
