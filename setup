@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
+echo ""
+echo "    bootstrap packrat and dev dependencies..."
+echo ""
 Rscript packrat/init.R --bootstrap-packrat
+echo ""
+echo "    install maxplanckr from github repository..."
+echo ""
 R -q -e 'devtools::install_github("herreio/maxplanckr")'
