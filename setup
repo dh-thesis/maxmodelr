@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo ""
-echo "    bootstrap packrat and dev dependencies..."
+echo "    bootstrap packrat and restore dependencies..."
 echo ""
 Rscript packrat/init.R --bootstrap-packrat
 echo ""
