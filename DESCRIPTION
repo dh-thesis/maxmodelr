@@ -13,4 +13,6 @@ Imports:
     couplr,
     maxplanckr,
     topmodelr
+Suggests:
+    ldatuning
 RoxygenNote: 7.0.2
