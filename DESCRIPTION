@@ -1,0 +1,16 @@
+Package: maxmodelr
+Title: Topic Models Inferred from Publication Titles of the Max Planck Publication Repository (MPG.PuRe)
+Version: 0.0.1
+Authors@R: 
+    person(given = "Donatus",
+           family = "Herre",
+           role = c("aut", "cre"),
+           email = "git@herre.io")
+Description: a good description.
+Encoding: UTF-8
+LazyData: true
+Imports:
+    couplr,
+    maxplanckr,
+    topmodelr
+RoxygenNote: 7.0.2
