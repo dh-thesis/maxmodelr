@@ -6,6 +6,9 @@ packrat/lib*/
 packrat/src/*
 !packrat/src/packrat
 
+inst/model/*
+!inst/model/README.md
+
 doc
 inst/doc
 Meta
