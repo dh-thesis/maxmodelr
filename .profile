@@ -1,1 +1,1 @@
-export COUPLR_RDS="~/devel/herreio/maxmodelr/inst/model"
+export COUPLR_RDS="~/devel/bsc/mmr/inst/model"
