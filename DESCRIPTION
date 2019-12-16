@@ -1,5 +1,5 @@
 Package: maxmodelr
-Title: Topic Models Inferred from Publication Titles of the Max Planck Publication Repository (MPG.PuRe)
+Title: Topic Models Inferred from Publication Titles of MPG.PuRe
 Version: 0.0.1
 Authors@R: 
     person(given = "Donatus",
