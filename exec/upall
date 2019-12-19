@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 ROOT="$(dirname "$0")"
-echo $ROOT
-source ${ROOT}/updata
-source $ROOT/upmodel
-source $ROOT/uputil
+source "${ROOT}/updata"
+source "${ROOT}/upmodel"
+source "${ROOT}/uputil"
