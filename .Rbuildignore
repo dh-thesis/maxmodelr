@@ -1,2 +1,16 @@
 ^packrat/
 ^\.Rprofile$
+^\.Rprofile2$
+^\.Rproj\.user$
+^.*\.Rhistory$
+^.*\.Rproj$
+^.*\.log$
+^data-raw$
+^doc$
+^Meta$
+^_$
+^R/_/
+^dev$
+\.gitignore
+^Makefile$
+^inst/python/env/
