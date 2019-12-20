@@ -6,7 +6,6 @@ if [ -f .Rprofile ]; then
    mv .Rprofile .Rprofile2
 fi
 Rscript packrat/init.R --bootstrap-packrat
-R -q -e "packrat::snapshot()"
 if [ -f .Rprofile2 ]; then
    mv .Rprofile2 .Rprofile
 fi

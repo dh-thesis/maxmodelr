@@ -10,10 +10,6 @@ if [ -f .Rprofile ]; then
    mv .Rprofile .Rprofile2
 fi
 R -q -e 'source("packrat/init.R");devtools::install_github("herreio/topmodelr")'
-echo ""
-echo "    create snapshot of library with packrat..."
-echo ""
-R -q -e 'packrat::snapshot()'
 if [ -f .Rprofile2 ]; then
    mv .Rprofile2 .Rprofile
 fi
