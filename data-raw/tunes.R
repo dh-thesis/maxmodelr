@@ -17,7 +17,7 @@ system.time({
   docs <- dtcorp$nrow
   cat(paste("corpus has", docs, "documents and", vocab, "terms...\n"))
   cat("start tuning model of eng titles...\n")
-  fp <- file.path(fp_tunes, "titles_eng.png")
+  fp <- file.path(dp_tunes, "titles_eng.png")
   topmodelr::tune_and_save_plot(dtcorp, topics, fp)
   cat("done tuning model of eng titles...\n")
 })
@@ -36,7 +36,7 @@ system.time({
   docs <- dtcorp$nrow
   cat(paste("corpus has", docs, "documents and", vocab, "terms...\n"))
   cat("start tuning model of mpi titles...\n")
-  fp <- file.path(fp_tunes, "titles_mpi.png")
+  fp <- file.path(dp_tunes, "titles_mpi.png")
   topmodelr::tune_and_save_plot(dtcorp, topics, fp)
   cat("done tuning model of mpi titles...\n")
 })
@@ -55,7 +55,7 @@ system.time({
   docs <- dtcorp$nrow
   cat(paste("corpus has", docs, "documents and", vocab, "terms...\n"))
   cat("start tuning model of pers titles...\n")
-  fp <- file.path(fp_tunes, "titles_pers.png")
+  fp <- file.path(dp_tunes, "titles_pers.png")
   topmodelr::tune_and_save_plot(dtcorp, topics, fp)
   cat("done tuning model of pers titles...\n")
 })
