@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo ""
+echo "    start inferring btm models..."
+echo ""
+Rscript data-raw/mod_btm.R
+echo ""
+echo "    finished inference of btm models ... all done!"
+echo ""

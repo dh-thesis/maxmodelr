@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo ""
+echo "    start inferring lda models..."
+echo ""
+Rscript data-raw/mod_lda.R
+echo ""
+echo "    finished inference of lda models ... all done!"
+echo ""

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo ""
+echo "    start tuning lda models..."
+echo ""
+Rscript data-raw/tunes.R
+echo ""
+echo "    finished tuning of lda models ... all done!"
+echo ""
