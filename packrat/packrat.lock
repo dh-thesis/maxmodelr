@@ -41,6 +41,7 @@ Package: Matrix
 Source: CRAN
 Version: 1.2-18
 Hash: 54974505e2addac3ec63f9d4bf8ff98a
+Requires: lattice
 
 Package: NLP
 Source: CRAN
@@ -312,6 +313,11 @@ Version: 1.0.0
 Hash: 7140f0fbdfbc057db1214730d94f3a9f
 Requires: BH, Rcpp, rlang
 
+Package: lattice
+Source: CRAN
+Version: 0.20-38
+Hash: 45211081d39bb6d5a89fd789105901aa
+
 Package: lazyeval
 Source: CRAN
 Version: 0.2.2
@@ -337,17 +343,17 @@ Hash: bdc4d48c3135e8f3b399536ddf160df4
 Package: maxplanckr
 Source: github
 Version: 0.0.1
-Hash: 6dd57a9b22e3cc7df9af736a3bb01f44
+Hash: 4d497074c16c1e8ebba7e563ddbb5398
 Requires: dplyr, readr, reticulate, slam, tm
 GithubRepo: maxplanckr
 GithubUsername: herreio
 GithubRef: master
-GithubSha1: ba2dd4de950878c799992be5d60a6d89de9117c8
+GithubSha1: a89741acbbd68d1214e88ea50232c60cd428f74a
 RemoteHost: api.github.com
 RemoteRepo: maxplanckr
 RemoteUsername: herreio
 RemoteRef: master
-RemoteSha: ba2dd4de950878c799992be5d60a6d89de9117c8
+RemoteSha: a89741acbbd68d1214e88ea50232c60cd428f74a
 
 Package: memoise
 Source: CRAN
@@ -381,6 +387,7 @@ Package: nlme
 Source: CRAN
 Version: 3.1-143
 Hash: 168e63ebdc9742a788b486bc50875cf7
+Requires: lattice
 
 Package: openssl
 Source: CRAN
@@ -395,8 +402,8 @@ Hash: 498643e765d1442ba7b1160a1df3abf9
 
 Package: pillar
 Source: CRAN
-Version: 1.4.2
-Hash: 28ff1862b4e0c8761efca442e80a63d8
+Version: 1.4.3
+Hash: 64ebcd61a33f2bd9059ffa8a323fd620
 Requires: cli, crayon, fansi, rlang, utf8, vctrs
 
 Package: pkgbuild
@@ -423,8 +430,8 @@ Hash: 81a8008a5e7858552503935f1abe48aa
 
 Package: plyr
 Source: CRAN
-Version: 1.8.4
-Hash: 17953ad5e34a454974b9e44c5a094649
+Version: 1.8.5
+Hash: b40b6a12b97e854607af0f3bd4cce26b
 Requires: Rcpp
 
 Package: praise
@@ -466,6 +473,11 @@ Version: 0.3.3
 Hash: d4f497f8a97ef6c7182a87b2476748d1
 Requires: magrittr, rlang
 
+Package: rappdirs
+Source: CRAN
+Version: 0.3.1
+Hash: 7340cfebc77ad7b107a549a8635e64dd
+
 Package: rcmdcheck
 Source: CRAN
 Version: 1.3.3
@@ -492,9 +504,9 @@ Requires: Rcpp, plyr, stringr
 
 Package: reticulate
 Source: CRAN
-Version: 1.13
-Hash: 97ac0d716012cf339b09ca80c54fcafe
-Requires: Matrix, Rcpp, jsonlite
+Version: 1.14
+Hash: c661ac9f2da16aeadcba28d89a5a9e90
+Requires: Matrix, Rcpp, jsonlite, rappdirs
 
 Package: rex
 Source: CRAN
@@ -617,18 +629,18 @@ Requires: modeltools, slam, tm
 Package: topmodelr
 Source: github
 Version: 0.0.1
-Hash: 2af24b724a4cdf2221db9d4b5be6b84c
-Requires: BTM, LDAvis, RcppAnnoy, stopwords, stringr, tm, topicmodels,
-    utlr
+Hash: 0da62b7db7af88d9aa3c983b8fc81253
+Requires: BTM, LDAvis, RcppAnnoy, dplyr, ldatuning, slam, stopwords,
+    stringr, tm, topicmodels, utlr
 GithubRepo: topmodelr
 GithubUsername: herreio
 GithubRef: master
-GithubSha1: 35d41bb110a747db4d8b88115e5207057e52267d
+GithubSha1: ed0c7338368ccdc04f5f9b3249a6e58159d9bdc5
 RemoteHost: api.github.com
 RemoteRepo: topmodelr
 RemoteUsername: herreio
 RemoteRef: master
-RemoteSha: 35d41bb110a747db4d8b88115e5207057e52267d
+RemoteSha: ed0c7338368ccdc04f5f9b3249a6e58159d9bdc5
 
 Package: usethis
 Source: CRAN
@@ -659,8 +671,8 @@ RemoteSha: 153e027945309d7bc33a10a2077356af10c608a7
 
 Package: vctrs
 Source: CRAN
-Version: 0.2.0
-Hash: daf77cb3dbcacd7fb619cb3748dc215f
+Version: 0.2.1
+Hash: 8ba1577e36ecf03aed0660c019fe7097
 Requires: backports, digest, ellipsis, glue, rlang, zeallot
 
 Package: viridisLite
