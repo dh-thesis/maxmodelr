@@ -6,7 +6,8 @@ Authors@R:
            family = "Herre",
            role = c("aut", "cre"),
            email = "git@herre.io")
-Description: a good description.
+Description: .. to do ..
+License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
