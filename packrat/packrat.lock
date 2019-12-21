@@ -1,7 +1,7 @@
 PackratFormat: 1.4
 PackratVersion: 0.5.0
 RVersion: 3.6.2
-Repos: CRAN=https://ftp.gwdg.de/pub/misc/cran
+Repos: CRAN=https://cran.rstudio.com/
 
 Package: BH
 Source: CRAN
@@ -95,6 +95,17 @@ Package: backports
 Source: CRAN
 Version: 1.1.5
 Hash: 35ad64fcf2063e2a52031b0f1a59d8f0
+
+Package: base64enc
+Source: CRAN
+Version: 0.1-3
+Hash: c590d29e555926af053055e23ee79efb
+
+Package: bookdown
+Source: CRAN
+Version: 0.16
+Hash: 3114889894f374b57b95b1c12e7615dd
+Requires: htmltools, knitr, rmarkdown, tinytex, xfun
 
 Package: brew
 Source: CRAN
@@ -262,6 +273,11 @@ Source: CRAN
 Version: 0.3.0
 Hash: a9e7b0666eb933a0cb36779240b4462e
 
+Package: highr
+Source: CRAN
+Version: 0.8
+Hash: 16aa2cc98d7b68c9d148c263c8dcdbcd
+
 Package: hms
 Source: CRAN
 Version: 0.5.2
@@ -302,6 +318,12 @@ Source: CRAN
 Version: 1.6
 Hash: 5f969e213e966135393e3e304abf3f49
 
+Package: knitr
+Source: CRAN
+Version: 1.26
+Hash: 779c00d598441cbc415058a49178fcf8
+Requires: evaluate, highr, markdown, stringr, xfun, yaml
+
 Package: labeling
 Source: CRAN
 Version: 0.3
@@ -340,20 +362,26 @@ Source: CRAN
 Version: 1.5
 Hash: bdc4d48c3135e8f3b399536ddf160df4
 
+Package: markdown
+Source: CRAN
+Version: 1.1
+Hash: 1b6a18fd395589425e338a47b999099f
+Requires: mime, xfun
+
 Package: maxplanckr
 Source: github
 Version: 0.0.1
-Hash: 4d497074c16c1e8ebba7e563ddbb5398
+Hash: 84c7facfc755226451ba378da1013317
 Requires: dplyr, readr, reticulate, slam, tm
 GithubRepo: maxplanckr
 GithubUsername: herreio
 GithubRef: master
-GithubSha1: a89741acbbd68d1214e88ea50232c60cd428f74a
+GithubSha1: ef955046495e970ad7798ca5b115226b05bec4b2
 RemoteHost: api.github.com
 RemoteRepo: maxplanckr
 RemoteUsername: herreio
 RemoteRef: master
-RemoteSha: a89741acbbd68d1214e88ea50232c60cd428f74a
+RemoteSha: ef955046495e970ad7798ca5b115226b05bec4b2
 
 Package: memoise
 Source: CRAN
@@ -519,6 +547,13 @@ Source: CRAN
 Version: 0.4.2
 Hash: c5cfcde637bbff4e42edad2e69dac5c7
 
+Package: rmarkdown
+Source: CRAN
+Version: 2.0
+Hash: 7804c349f69af5cdf4137f39f814b088
+Requires: base64enc, evaluate, htmltools, jsonlite, knitr, mime,
+    stringr, tinytex, xfun, yaml
+
 Package: roxygen2
 Source: CRAN
 Version: 7.0.2
@@ -565,8 +600,8 @@ Requires: R6, crayon, digest, fastmap, htmltools, httpuv, jsonlite,
 
 Package: slam
 Source: CRAN
-Version: 0.1-46
-Hash: 7f85c392e5bae75e32546d527e447f9f
+Version: 0.1-47
+Hash: 1a92c8ac58f75bc0fbd9f345598e599c
 
 Package: sourcetools
 Source: CRAN
@@ -614,6 +649,12 @@ Version: 0.2.5
 Hash: 5cbca8a84b427f46bea4ee5c6c7fe36e
 Requires: Rcpp, glue, purrr, rlang
 
+Package: tinytex
+Source: CRAN
+Version: 0.18
+Hash: 6990b7f82cda6c960a20e83f8f85acaf
+Requires: xfun
+
 Package: tm
 Source: CRAN
 Version: 0.7-7
@@ -629,18 +670,18 @@ Requires: modeltools, slam, tm
 Package: topmodelr
 Source: github
 Version: 0.0.1
-Hash: 0da62b7db7af88d9aa3c983b8fc81253
+Hash: 87c74a4c81559a5bece20212b5d0ae32
 Requires: BTM, LDAvis, RcppAnnoy, dplyr, ldatuning, slam, stopwords,
     stringr, tm, topicmodels, utlr
 GithubRepo: topmodelr
 GithubUsername: herreio
 GithubRef: master
-GithubSha1: ed0c7338368ccdc04f5f9b3249a6e58159d9bdc5
+GithubSha1: da36caec356719f11aa815b00e5e337e17d29699
 RemoteHost: api.github.com
 RemoteRepo: topmodelr
 RemoteUsername: herreio
 RemoteRef: master
-RemoteSha: ed0c7338368ccdc04f5f9b3249a6e58159d9bdc5
+RemoteSha: da36caec356719f11aa815b00e5e337e17d29699
 
 Package: usethis
 Source: CRAN
@@ -675,6 +716,21 @@ Version: 0.2.1
 Hash: 8ba1577e36ecf03aed0660c019fe7097
 Requires: backports, digest, ellipsis, glue, rlang, zeallot
 
+Package: vgnttr
+Source: github
+Version: 0.0.1
+Hash: 5bce0ca6e03a7cd95aae22967d58d179
+Requires: bookdown, devtools, knitr, rmarkdown
+GithubRepo: vgnttr
+GithubUsername: herreio
+GithubRef: master
+GithubSha1: a961d3a24a3042decbc41c39f7b42b65d4201851
+RemoteHost: api.github.com
+RemoteRepo: vgnttr
+RemoteUsername: herreio
+RemoteRef: master
+RemoteSha: a961d3a24a3042decbc41c39f7b42b65d4201851
+
 Package: viridisLite
 Source: CRAN
 Version: 0.3.0
@@ -689,6 +745,11 @@ Package: withr
 Source: CRAN
 Version: 2.1.2
 Hash: d534108bcd5f34ec73e9eb523751ba20
+
+Package: xfun
+Source: CRAN
+Version: 0.11
+Hash: d9465c5b37edf541913d74968461fc61
 
 Package: xml2
 Source: CRAN
