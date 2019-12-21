@@ -670,18 +670,18 @@ Requires: modeltools, slam, tm
 Package: topmodelr
 Source: github
 Version: 0.0.1
-Hash: 87c74a4c81559a5bece20212b5d0ae32
+Hash: aca4166c98bceb6a922a409e235a3558
 Requires: BTM, LDAvis, RcppAnnoy, dplyr, ldatuning, slam, stopwords,
     stringr, tm, topicmodels, utlr
 GithubRepo: topmodelr
 GithubUsername: herreio
 GithubRef: master
-GithubSha1: da36caec356719f11aa815b00e5e337e17d29699
+GithubSha1: 90d3c824077f2d0fb57416c2e177facda31e4631
 RemoteHost: api.github.com
 RemoteRepo: topmodelr
 RemoteUsername: herreio
 RemoteRef: master
-RemoteSha: da36caec356719f11aa815b00e5e337e17d29699
+RemoteSha: 90d3c824077f2d0fb57416c2e177facda31e4631
 
 Package: usethis
 Source: CRAN
