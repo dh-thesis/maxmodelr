@@ -1,4 +1,4 @@
-# devtools::load_all()
+devtools::load_all()
 
 topics <- c(2,5,10,50,seq(100,1000,100))
 dp_models <- system.file("model", package="maxmodelr")
@@ -12,7 +12,7 @@ system.time({
   data(titles_eng, package="maxplanckr")
   docid <- "all_lang"
   bicorp <- topmodelr::prepare_bi_corpus(titles_eng, docid)
-  bicorp <- topmodelr::filter_bi_corpus(bicorp)
+  bicorp <- topmodelr::filter_bi_corpus(bicorp, 1, 1)
   cat("done preparing biterm corpus...\n")
   vocab <- length(unique(bicorp$Term))
   docs <- length(unique(bicorp$Doc))
