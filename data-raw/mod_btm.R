@@ -1,4 +1,4 @@
-# devtools::load_all()
+devtools::load_all()
 
 topics <- c(2,5,10,50,seq(100,1000,100))
 dp_models <- system.file("model", package="maxmodelr")
