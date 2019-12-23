@@ -30,7 +30,7 @@ names(models)
 # /// INFER /// #
 # ///////////// #
 
-rds_out <- system.file("titles", package="maxmodelr")
+rds_out <- system.file("infer", package="maxmodelr")
 
 cat("\nbtm theta...\n")
 t1 <- Sys.time()
