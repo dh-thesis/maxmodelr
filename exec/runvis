@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+echo ""
+echo "    start visualizing lda models..."
+echo ""
+Rscript data-raw/mod_vis.R
+echo ""
+echo "    finished visualizing of lda models ... all done!"
+echo ""
+
