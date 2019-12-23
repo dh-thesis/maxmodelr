@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo ""
+echo "    start inferring topic distributions of titles in corpus..."
+echo ""
+Rscript data-raw/titles.R
+echo ""
+echo "    all done..."
+echo ""
