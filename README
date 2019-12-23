@@ -1,0 +1,20 @@
+# ////////////////// #
+# /// maxmodelr /// #
+# //////////////// #
+
+
+#
+# CREATE MODELS
+#
+$ exec/runbtm > btm.log 2>&1
+$ exec/runlda > lda.log 2>&1
+
+#
+# TUNE MODELS
+#
+$ exec/runtunes > tunes.log 2>&1
+
+#
+# INFER TITLES
+#
+$ exec/titles > titles.log 2>&1
