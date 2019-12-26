@@ -23,8 +23,8 @@ Requires: crosstalk, htmltools, htmlwidgets, jsonlite, magrittr,
 
 Package: ISOcodes
 Source: CRAN
-Version: 2019.04.22
-Hash: 5ecbc285cd5964328ba11e5a2a7c48f3
+Version: 2019.12.22
+Hash: 54d8cad390946bcae5e88fe0bdf5f44f
 
 Package: LDAvis
 Source: CRAN
@@ -584,6 +584,12 @@ Version: 1.1.0
 Hash: fa53af4e3ceba05fc79a31bde5962445
 Requires: R6, RColorBrewer, farver, labeling, lifecycle, munsell,
     viridisLite
+
+Package: servr
+Source: CRAN
+Version: 0.15
+Hash: fab18c8d44a1f13fa259073657544ef4
+Requires: httpuv, jsonlite, mime, xfun
 
 Package: sessioninfo
 Source: CRAN
