@@ -15,6 +15,12 @@ $ exec/runlda > lda.log 2>&1
 $ exec/runtunes > tunes.log 2>&1
 
 #
+# VISUALIZE LDA MODELS
+#
+$ exec/runvis > ldavis.log 2>&1
+
+
+#
 # INFER TITLES
 #
-$ exec/titles > titles.log 2>&1
+$ exec/infer > infer.log 2>&1
