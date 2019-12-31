@@ -35,11 +35,11 @@ rds_out <- system.file("infer", package="maxmodelr")
 cat("\nbtm theta...\n")
 t1 <- Sys.time()
 btm_theta <- t(sapply(corpus,
-		      function(x) {
-			      as.vector(topmodelr::btm_infer(models$btm_all_lang_t100, x))
-		      })
+                      function(x) {
+                        as.vector(topmodelr::btm_infer(models$btm_all_lang_t100, x))
+                      })
 )
-saveRDS(btm_theta, file.path(rds_out, "btm_theta.RDS"))
+saveRDS(btm_theta, file.path(rds_out, "btm_t100_theta.RDS"))
 t2 <- Sys.time()
 elapsed <- difftime(t2, t1, units="mins")
 cat("btm theta done!\n")
@@ -48,11 +48,11 @@ cat(paste("time elapsed:", round(elapsed,2), "min\n\n"))
 cat("all theta...\n")
 t1 <- Sys.time()
 all_theta <- t(sapply(corpus,
-		      function(x) {
-			      as.vector(topmodelr::lda_infer(models$lda_all_lang_t100, x))
-		      })
+                      function(x) {
+                        as.vector(topmodelr::lda_infer(models$lda_all_lang_t100, x))
+                      })
 )
-saveRDS(all_theta, file.path(rds_out, "all_theta.RDS"))
+saveRDS(all_theta, file.path(rds_out, "all_t100_theta.RDS"))
 t2 <- Sys.time()
 elapsed <- difftime(t2, t1, units="mins")
 cat("all theta done!\n")
@@ -61,11 +61,11 @@ cat(paste("time elapsed:", round(elapsed,2), "min\n\n"))
 cat("mpi theta...\n")
 t1 <- Sys.time()
 mpi_theta <- t(sapply(corpus,
-		      function(x) {
-			        as.vector(topmodelr::lda_infer(models$lda_mpi_lang_t100, x))
-		      })
+                      function(x) {
+                        as.vector(topmodelr::lda_infer(models$lda_mpi_lang_t100, x))
+                      })
 )
-saveRDS(mpi_theta, file.path(rds_out, "mpi_theta.RDS"))
+saveRDS(mpi_theta, file.path(rds_out, "mpi_t100_theta.RDS"))
 t2 <- Sys.time()
 elapsed <- difftime(t2, t1, units="mins")
 cat("mpi theta done!\n")
@@ -74,13 +74,12 @@ cat(paste("time elapsed:", round(elapsed,2), "min\n\n"))
 cat("pers theta...\n")
 t1 <- Sys.time()
 pers_theta <- t(sapply(corpus,
-		       function(x) {
-			       as.vector(topmodelr::lda_infer(models$lda_pers_lang_t100, x))
-		       })
+                       function(x) {
+                         as.vector(topmodelr::lda_infer(models$lda_pers_lang_t100, x))
+                       })
 )
-saveRDS(pers_theta, file.path(rds_out, "pers_theta.RDS"))
+saveRDS(pers_theta, file.path(rds_out, "pers_t100_theta.RDS"))
 t2 <- Sys.time()
 elapsed <- difftime(t2, t1, units="mins")
 cat("pers theta done!\n")
 cat(paste("time elapsed:", round(elapsed,2), "min\n\n"))
-
