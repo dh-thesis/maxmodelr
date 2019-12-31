@@ -9,6 +9,10 @@ packrat/src/*
 inst/model/*
 !inst/model/README.md
 
+inst/infer/*
+!inst/infer/README.md
+
+
 doc
 inst/doc
 Meta
