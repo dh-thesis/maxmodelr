@@ -2,7 +2,7 @@
 echo ""
 echo "    start inferring topic distributions of titles in corpus..."
 echo ""
-Rscript data-raw/titles.R
+Rscript data-raw/infer.R
 echo ""
 echo "    all done..."
 echo ""
