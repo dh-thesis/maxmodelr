@@ -1,6 +1,6 @@
 devtools::load_all()
 
-topics <- c(2,5,10,25,50,seq(100,500,100))
+topics <- c(2,5,10,25,50,75,seq(100,500,100))
 dp_tunes <- system.file("tunes", package="maxmodelr")
 
 # //////////////// #
@@ -62,4 +62,3 @@ system.time({
   cat("done tuning model of pers titles...\n")
   saveRDS(tunes, file.path(dp_tunes, "titles_pers_tunes.RDS"))
 })
-
