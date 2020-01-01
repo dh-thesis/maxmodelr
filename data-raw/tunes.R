@@ -1,6 +1,6 @@
 devtools::load_all()
 
-topics <- c(2,5,10,25,50,75,seq(100,500,100))
+topics <- c(2,5,10,25,50,seq(100,500,100))
 dp_tunes <- system.file("tunes", package="maxmodelr")
 
 # //////////////// #
