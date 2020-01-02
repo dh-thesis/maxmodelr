@@ -5,7 +5,7 @@ devtools::load_all()
 # ////////////// #
 
 data(titles_eng, package="maxplanckr")
-titles_eng <- titles_eng[1:500]
+# titles_eng <- titles_eng[1:500]
 
 titles_dt <- topmodelr::prepare_dt_corpus(titles_eng)
 titles_bi <- topmodelr::prepare_bi_corpus(titles_eng)
@@ -34,7 +34,7 @@ library(BTM)
 library(topicmodels)
 
 rds_out <- system.file("infer", package="maxmodelr")
-dir.create(rds_out, showWarnings = FALSE, recursive= TRUE)
+dir.create(rds_out, showWarnings = FALSE, recursive = TRUE)
 
 cat("\nbtm theta...\n")
 btm <- topmodelr::get_models(models, "btm_all_lang_t")
