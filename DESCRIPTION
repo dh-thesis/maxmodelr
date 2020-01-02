@@ -13,5 +13,6 @@ LazyData: true
 Imports:
     maxplanckr,
     shiny,
-    topmodelr
+    topmodelr,
+    utlr
 RoxygenNote: 7.0.2
