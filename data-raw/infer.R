@@ -5,7 +5,7 @@ devtools::load_all()
 # ////////////// #
 
 data(titles_eng, package="maxplanckr")
-titles_eng <- titles_eng
+titles_eng <- titles_eng[1:500]
 
 titles_dt <- topmodelr::prepare_dt_corpus(titles_eng)
 titles_bi <- topmodelr::prepare_bi_corpus(titles_eng)
