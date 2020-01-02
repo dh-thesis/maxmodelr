@@ -11,11 +11,7 @@ License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
-    couplr,
     maxplanckr,
     shiny,
     topmodelr
-Suggests:
-    ldatuning,
-    tm
 RoxygenNote: 7.0.2
