@@ -5,81 +5,75 @@ devtools::load_all()
 # ////////////// #
 
 data(titles_eng, package="maxplanckr")
-corpus <- as.vector(sapply(titles_eng, function(x) x$content))
-corpus_ids <- as.vector(sapply(titles_eng, function(x) gsub(".txt","",x$meta$id,fixed=T)))
+titles_eng <- titles_eng
 
-#ws <- grepl("\\s",corpus)
-#corpus <- corpus[ws]
-#corpus_ids <- corpus_ids[ws]
+titles_dt <- topmodelr::prepare_dt_corpus(titles_eng)
+titles_bi <- topmodelr::prepare_bi_corpus(titles_eng)
 
 # ////////////// #
 # /// MODELS /// #
 # ////////////// #
 
-cat("\n\nmodels:\n")
+k <- 100
 
 rds_root <- system.file("model", package="maxmodelr")
 rds_paths <- list.files(rds_root, full.names=T, pattern="[[:digit:]].RDS")
-rds_paths_t100 <- utlr::filter_paths(rds_paths, pattern="t100_")
+rds_paths_k <- utlr::filter_paths(rds_paths, pattern=paste0("t",k,"_"))
 
-models <- topmodelr::read_models(rds_paths_t100)
+models <- topmodelr::read_models(rds_paths_k)
 names(models) <- gsub("_[0-9]+\\.[0-9]+\\.[0-9]+","",names(models))
+
+cat("\n\nmodels:\n")
 names(models)
 
 # ///////////// #
 # /// INFER /// #
 # ///////////// #
 
+library(BTM)
+library(topicmodels)
+
 rds_out <- system.file("infer", package="maxmodelr")
+dir.create(rds_out, showWarnings = FALSE, recursive= TRUE)
 
 cat("\nbtm theta...\n")
+btm <- topmodelr::get_models(models, "btm_all_lang_t")
 t1 <- Sys.time()
-btm_theta <- t(sapply(corpus,
-                      function(x) {
-                        as.vector(topmodelr::btm_infer(models$btm_all_lang_t100, x))
-                      })
-)
-saveRDS(btm_theta, file.path(rds_out, "btm_t100_theta.RDS"))
+btm_theta <- predict(models$btm, newdata=titles_bi)
 t2 <- Sys.time()
 elapsed <- difftime(t2, t1, units="mins")
 cat("btm theta done!\n")
 cat(paste("time elapsed:", round(elapsed,2), "min\n\n"))
+saveRDS(btm_theta, file.path(rds_out, paste0("btm_t",k,"_theta.RDS")))
 
 cat("all theta...\n")
 t1 <- Sys.time()
-all_theta <- t(sapply(corpus,
-                      function(x) {
-                        as.vector(topmodelr::lda_infer(models$lda_all_lang_t100, x))
-                      })
-)
-saveRDS(all_theta, file.path(rds_out, "all_t100_theta.RDS"))
+lda <- topmodelr::get_models(models, "lda_all_lang_t")
+all_theta <- topicmodels::posterior(lda, titles_dt, lda@control)
 t2 <- Sys.time()
 elapsed <- difftime(t2, t1, units="mins")
 cat("all theta done!\n")
 cat(paste("time elapsed:", round(elapsed,2), "min\n\n"))
+saveRDS(all_theta, file.path(rds_out, paste0("all_t",k,"_theta.RDS")))
 
 cat("mpi theta...\n")
 t1 <- Sys.time()
-mpi_theta <- t(sapply(corpus,
-                      function(x) {
-                        as.vector(topmodelr::lda_infer(models$lda_mpi_lang_t100, x))
-                      })
-)
-saveRDS(mpi_theta, file.path(rds_out, "mpi_t100_theta.RDS"))
+lda <- topmodelr::get_models(models, "lda_mpi_lang_t")
+mpi_theta <- topicmodels::posterior(lda, titles_dt, lda@control)
 t2 <- Sys.time()
 elapsed <- difftime(t2, t1, units="mins")
 cat("mpi theta done!\n")
 cat(paste("time elapsed:", round(elapsed,2), "min\n\n"))
+saveRDS(mpi_theta, file.path(rds_out, "mpi_t100_theta.RDS"))
 
 cat("pers theta...\n")
 t1 <- Sys.time()
-pers_theta <- t(sapply(corpus,
-                       function(x) {
-                         as.vector(topmodelr::lda_infer(models$lda_pers_lang_t100, x))
-                       })
-)
-saveRDS(pers_theta, file.path(rds_out, "pers_t100_theta.RDS"))
+lda <- topmodelr::get_models(models, "lda_pers_lang_t")
+pers_theta <- topicmodels::posterior(lda, titles_dt, lda@control)
 t2 <- Sys.time()
 elapsed <- difftime(t2, t1, units="mins")
 cat("pers theta done!\n")
 cat(paste("time elapsed:", round(elapsed,2), "min\n\n"))
+saveRDS(pers_theta, file.path(rds_out, paste0("pers_t", k, "_theta.RDS")))
+
+cat("all done!\n")
