@@ -12,6 +12,8 @@ inst/model/*
 inst/infer/*
 !inst/infer/README.md
 
+inst/couple/*
+!inst/couple/README.md
 
 doc
 inst/doc

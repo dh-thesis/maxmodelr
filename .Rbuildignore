@@ -16,4 +16,5 @@
 ^Makefile$
 ^inst/model/
 ^inst/infer/
+^inst/couple/
 ^inst/python/env/
