@@ -27,7 +27,7 @@ models <- topmodelr::read_models(rds_paths_k)
 names(models) <- gsub("_[0-9]+\\.[0-9]+\\.[0-9]+","",names(models))
 
 cat("\n\nmodels:\n")
-names(models)
+cat(paste0(names(models),"\n"),sep="")
 
 # ///////////// #
 # /// INFER /// #
