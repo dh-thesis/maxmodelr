@@ -1,5 +1,8 @@
 devtools::load_all()
 
+rds_out <- "inst/infer"
+dir.create(rds_out, showWarnings = FALSE, recursive = TRUE)
+
 # ////////////// #
 # /// CORPUS /// #
 # ////////////// #
@@ -32,9 +35,6 @@ names(models)
 
 library(BTM)
 library(topicmodels)
-
-rds_out <- system.file("infer", package="maxmodelr")
-dir.create(rds_out, showWarnings = FALSE, recursive = TRUE)
 
 cat("\nbtm theta...\n")
 btm <- topmodelr::get_models(models, "btm_all_lang_t")
