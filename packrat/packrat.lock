@@ -371,17 +371,17 @@ Requires: mime, xfun
 Package: maxplanckr
 Source: github
 Version: 0.0.1
-Hash: 84c7facfc755226451ba378da1013317
+Hash: 828d0df31c4ada7d7c4386cb729d9fa2
 Requires: dplyr, readr, reticulate, slam, tm
 GithubRepo: maxplanckr
 GithubUsername: herreio
 GithubRef: master
-GithubSha1: ef955046495e970ad7798ca5b115226b05bec4b2
+GithubSha1: 49f5ec2296d52ada48a6eaff31eb0cf2963629a5
 RemoteHost: api.github.com
 RemoteRepo: maxplanckr
 RemoteUsername: herreio
 RemoteRef: master
-RemoteSha: ef955046495e970ad7798ca5b115226b05bec4b2
+RemoteSha: 49f5ec2296d52ada48a6eaff31eb0cf2963629a5
 
 Package: memoise
 Source: CRAN
@@ -676,18 +676,18 @@ Requires: modeltools, slam, tm
 Package: topmodelr
 Source: github
 Version: 0.0.1
-Hash: aca4166c98bceb6a922a409e235a3558
+Hash: 70ecfe0bc115ad5b80f4e2d24fd5097a
 Requires: BTM, LDAvis, RcppAnnoy, dplyr, ldatuning, slam, stopwords,
     stringr, tm, topicmodels, utlr
 GithubRepo: topmodelr
 GithubUsername: herreio
 GithubRef: master
-GithubSha1: 90d3c824077f2d0fb57416c2e177facda31e4631
+GithubSha1: 765a037e603e1db7eb6248a0fc88d854a81426d3
 RemoteHost: api.github.com
 RemoteRepo: topmodelr
 RemoteUsername: herreio
 RemoteRef: master
-RemoteSha: 90d3c824077f2d0fb57416c2e177facda31e4631
+RemoteSha: 765a037e603e1db7eb6248a0fc88d854a81426d3
 
 Package: usethis
 Source: CRAN
