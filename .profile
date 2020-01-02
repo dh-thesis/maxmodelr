@@ -1,1 +1,1 @@
-export COUPLR_RDS="~/devel/bsc/mmr/inst/model"
+export MODEL_RDS="~/devel/bsc/mmr/inst/model"
