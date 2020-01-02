@@ -1,6 +1,6 @@
 #' lda_topic_items
 #'
-#' topic model-based search for publications
+#' items most associated with given topic
 #'
 #' @param lda model trained on 221386 title documents `all_lang`
 #' @param topic number of topic whose items should be returned
@@ -15,4 +15,18 @@ lda_topic_items <- function(lda, topic=1) {
   topic_items <- names(topmodelr::lda_topic_docs(lda, topic))
   topic_items <- gsub(".txt", "", topic_items, fixed=T)
   maxplanckr::sel_items[match(topic_items, sel_items$Id),][,c("Id","Label","Year")]
+}
+
+#' lda_item_search
+#'
+#' model-based search for publications
+#'
+#' @param lda model trained on 221386 title documents `all_lang`
+#' @param query character vector with query words
+#'
+#' @export
+#' @export
+lda_item_search <- function(lda, query) {
+  topic <- which.max(topmodelr::lda_infer(lda, query))
+  lda_topic_items(lda, topic)
 }

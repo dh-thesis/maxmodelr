@@ -12,5 +12,5 @@ lda_topic_items(lda, topic = 1)
 \item{topic}{number of topic whose items should be returned}
 }
 \description{
-topic model-based search for publications
+items most associated with given topic
 }

@@ -1,9 +1,9 @@
 #' @export
-rds_self <- function() {
-  system.file("model", package="maxmodelr")
+inst <- function(i="model") {
+  system.file(i, package="maxmodelr")
 }
 
 #' @export
-rds_files <- function() {
-  list.files(rds_self(), pattern="\\.RDS", full.names = TRUE)
+inst_rds <- function(i="model") {
+  list.files(inst(i), pattern="\\.RDS", full.names = TRUE)
 }
