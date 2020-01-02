@@ -14,5 +14,6 @@
 ^dev$
 \.gitignore
 ^Makefile$
-^inst/model/.*.RDS
+^inst/model/
+^inst/infer/
 ^inst/python/env/
