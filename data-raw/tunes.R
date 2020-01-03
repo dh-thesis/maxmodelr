@@ -28,7 +28,7 @@ system.time({
 # //////////////// #
 
 system.time({
-  cat("start preparing eng title corpus...\n")
+  cat("start preparing mpi title corpus...\n")
   data(titles_mpi, package="maxplanckr")
   dtcorp <- topmodelr::prepare_dt_corpus(titles_mpi)
   dtcorp <- topmodelr::filter_dt_corpus(dtcorp, 1, 1)
