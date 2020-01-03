@@ -15,9 +15,9 @@ rds_paths_k <- utlr::filter_paths(rds_paths, pattern=paste0("t",k,"_"))
 
 models <- topmodelr::read_models(rds_paths_k)
 names(models) <- gsub("_[0-9]+\\.[0-9]+\\.[0-9]+","",names(models))
-names(models) <- gsub("btm_all_lang","btm", names(models), fixed=T)
-names(models) <- gsub("lda_","", names(models), fixed=T)
+names(models) <- gsub("btm_all_lang","btm_all", names(models), fixed=T)
 names(models) <- gsub("_lang","", names(models), fixed=T)
+names(models) <- gsub(paste0("_t",k),"",names(models),fixed=T)
 
 saveRDS(
   models,
