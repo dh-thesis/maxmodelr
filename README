@@ -24,3 +24,8 @@ $ exec/runvis > ldavis.log 2>&1
 # INFER TITLES
 #
 $ exec/infer > infer.log 2>&1
+
+#
+# COUPLE TITLES AND TOPICS
+#
+$ exec/couple
