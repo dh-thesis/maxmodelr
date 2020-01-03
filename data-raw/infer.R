@@ -64,7 +64,7 @@ t2 <- Sys.time()
 elapsed <- difftime(t2, t1, units="mins")
 cat("mpi theta done!\n")
 cat(paste("time elapsed:", round(elapsed,2), "min\n\n"))
-saveRDS(mpi_theta, file.path(rds_out, "mpi_t100_theta.RDS"))
+saveRDS(mpi_theta, file.path(rds_out, paste0("mpi_t", k, "_theta.RDS")))
 
 cat("pers theta...\n")
 t1 <- Sys.time()
