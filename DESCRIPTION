@@ -16,4 +16,7 @@ Imports:
     shiny,
     topmodelr,
     utlr
+Remotes: herreio/topmodelr,
+    herreio/utlr,
+    herreio/maxplanckr
 RoxygenNote: 7.0.2
