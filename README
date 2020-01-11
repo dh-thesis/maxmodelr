@@ -9,6 +9,12 @@ $ git clone https://github.com/dh-thesis/maxmodelr.git
 $ cd maxmodelr
 
 
+# REQUIREMENTS
+
+--> check if you fullfill the requirements listed
+--> at https://github.com/herreio/maxplanckr
+
+
 # PUBLICATION SEARCH
 
 # start R console
