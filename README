@@ -2,30 +2,67 @@
 # /// maxmodelr /// #
 # //////////////// #
 
+# SET UP
 
-#
-# CREATE MODELS
-#
+# ... by cloning the repository
+$ git clone https://github.com/dh-thesis/maxmodelr.git
+
+
+# PUBLICATION SEARCH
+
+# start R console
+$ R
+
+# if it's the first time, packrat will install itself
+# after that simply run the following command to set up R environment
+> packrat::restore()
+# this will take same time, grab yourself a coffee...
+
+# load package
+> devtools::load_all()
+
+# load topic coupling data (k = number of topics)
+> couple <- load_couple(k=25)
+> format(object.size(couple), units="MB")
+# [1] "1380.6 Mb" <-- be aware of this memory usage, you need some free RAM!
+
+# set search query
+> query <- "information retrieval"
+
+# choose topic model
+> models <- c("lda_all","lda_mpi","lda_pers","btm_all")
+> model <- sample(models, 1)
+
+# get n most probable items with same topic as query
+> n = 20
+> search_topic_items(couple, query=query, model=model, n=n)
+
+# take c most probable items with same topic as query
+# and compute js-divergence between theta of items and query
+# return the first n items
+> c = 100
+> search_dist_items(couple, query=query, model=model, n=n, c=c)
+
+# take all items with same topic as query
+# and compute js-divergence between thetas
+# return the first n items
+> search_topic_items_dist(couple, query=query, model=model, n=n, c=c)
+
+
+# DATA PREPARATION
+
+# create models
 $ exec/runbtm > btm.log 2>&1
 $ exec/runlda > lda.log 2>&1
 
-#
-# TUNE MODELS
-#
+# tune models
 $ exec/runtunes > tunes.log 2>&1
 
-#
-# VISUALIZE LDA MODELS
-#
+# visualize lda models
 $ exec/runvis > ldavis.log 2>&1
 
-
-#
-# INFER TITLES
-#
+# infer titles
 $ exec/infer > infer.log 2>&1
 
-#
-# COUPLE TITLES AND TOPICS
-#
+# couple titles and topics
 $ exec/couple
