@@ -2,6 +2,10 @@
 
 export(inst)
 export(inst_rds)
-export(lda_item_search)
-export(lda_topic_items)
+export(load_couple)
+export(search_dist_items)
+export(search_topic_items)
+export(search_topic_items_dist)
+export(topic_items)
+export(topic_items_prob)
 export(topicsearch)
