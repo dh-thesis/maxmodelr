@@ -107,7 +107,7 @@ search_dist_items <- function(couple, query="information retrieval", model="btm_
 }
 
 #' @export
-search_topic_items_dist <- function(couple, query="information retrieval", model="btm_all", n=10) {
+search_topic_items_dist <- function(couple, query="information retrieval", model="btm_all", n=10, limit=TRUE) {
   check_model(model)
   couple_model <- couple$model[[model]]
   # /// infer theta for query /// #
@@ -120,6 +120,15 @@ search_topic_items_dist <- function(couple, query="information retrieval", model
   query_topic <- which.max(query_theta)
   # /// consider only items with the same most probable topic of query /// #
   query_items <- topic_items(couple, model=model, topic=query_topic)
+  # /// check if vector size is reasonable to be computed by jsd /// #
+  if(length(query_items$Id) > 5000) {
+    if(limit) {
+      mssg <- paste0("\nnumber of vectors exceeds reasonable size for similarity calculation.\n")
+      mssg <- paste0(mssg, "if you really want to compare ",length(query_items$Id),
+                     " vectors, run the function with limit=FALSE !\n\n")
+      return(cat(mssg))
+    }
+  }
   # /// compute JSD for query and theta of topic items /// #
   query_items_theta <- couple$theta[[model]][query_items$Id,]
   query_n <- length(rownames(query_items_theta))
@@ -149,16 +158,16 @@ items_affil_proportion <- function(items) {
 
 check_model <- function(model=NULL) {
   if(is.null(model)) {
-    nomodel <- paste0("no model specified!\n",
+    nomodel <- paste0("\tno model specified!\n",
              "either  lda_all,  lda_mpi,  lda_pers\n",
              "or      btm_all\n")
-    stop(nomodel)
+    stop(simpleError(nomodel))
   }
   if(!(model %in% c("btm_all","lda_all","lda_mpi","lda_pers"))) {
-      notfound <- paste0("model not found!\n",
+      notfound <- paste0("\tmodel not found!\n",
              "either  lda_all,  lda_mpi,  lda_pers\n",
              "or      btm_all\n")
-      stop(notfound)
+      stop(simpleError(notfound))
   }
 }
 
