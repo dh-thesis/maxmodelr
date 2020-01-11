@@ -14,7 +14,9 @@
 ^dev$
 \.gitignore
 ^Makefile$
-^inst/model/
 ^inst/infer/
-^inst/couple/
+^inst/loglik/
+^inst/model/
+^inst/tunes/
+^inst/window/
 ^inst/python/env/
