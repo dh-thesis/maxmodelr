@@ -1,5 +1,5 @@
 Package: maxmodelr
-Title: Topic Models Inferred from Publication Titles of MPG.PuRe
+Title: Topic Model-Based Search for Scientific Publications
 Version: 0.0.1
 Authors@R: 
     person(given = "Donatus",
