@@ -15,6 +15,9 @@ inst/infer/*
 inst/couple/*
 !inst/couple/README.md
 
+inst/window/*
+!inst/window/README.md
+
 doc
 inst/doc
 Meta
