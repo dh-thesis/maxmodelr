@@ -1,50 +1,4 @@
 #' @export
-load_couple <- function(k=100) {
-  fp <- couple_paths(k)
-  names(fp) <- couple_names(k)
-  couple <- lapply(fp, readRDS)
-  couple <- couple_item_prep(couple, k)
-  couple <- couple_theta_prep(couple, k)
-  couple
-}
-
-couple_paths <- function(k) {
-  fp <- list.files(inst("couple"), pattern=".RDS", full.names=T)
-  fp <- utlr::filter_paths(fp, pattern=paste0("k",k,".RDS"))
-  if(identical(character(0),fp)) stop("no coupling data found!")
-  fp
-}
-
-couple_names <- function(k) {
-  fp_names <- list.files(inst("couple"), pattern=".RDS")
-  fp_names <- utlr::filter_paths(fp_names, pattern=paste0("k",k))
-  gsub(paste0("_k",k,".RDS"),"",fp_names)
-}
-
-couple_item_prep <- function(couple, k) {
-  # normalize model names
-  names(couple$item) <- gsub(paste0("all_t",k), "lda_all", names(couple$item), fixed=T)
-  names(couple$item) <- gsub(paste0("btm_t",k), "btm_all", names(couple$item), fixed=T)
-  names(couple$item) <- gsub(paste0("pers_t",k), "lda_pers", names(couple$item), fixed=T)
-  names(couple$item) <- gsub(paste0("mpi_t",k), "lda_mpi", names(couple$item), fixed=T)
-  couple
-}
-
-couple_theta_prep <- function(couple, k) {
-  # normalize model names
-  names(couple$theta) <- gsub(paste0("all_t",k), "lda_all", names(couple$theta), fixed=T)
-  names(couple$theta) <- gsub(paste0("btm_t",k), "btm_all", names(couple$theta), fixed=T)
-  names(couple$theta) <- gsub(paste0("pers_t",k), "lda_pers", names(couple$theta), fixed=T)
-  names(couple$theta) <- gsub(paste0("mpi_t",k), "lda_mpi", names(couple$theta), fixed=T)
-  # clean up IDs of items
-  rownames(couple$theta[["btm_all"]]) <- gsub("corpus:","",rownames((couple$theta[["btm_all"]])),fixed=T)
-  rownames(couple$theta[["lda_all"]]) <- gsub(".txt","",rownames((couple$theta[["lda_all"]])),fixed=T)
-  rownames(couple$theta[["lda_mpi"]]) <- gsub(".txt","",rownames((couple$theta[["lda_mpi"]])),fixed=T)
-  rownames(couple$theta[["lda_pers"]]) <- gsub(".txt","",rownames((couple$theta[["lda_pers"]])),fixed=T)
-  couple
-}
-
-#' @export
 search_topic_items <- function(couple, query="information retrieval", model="btm_all", n=10) {
   check_model(model)
   couple_model <- couple$model[[model]]
@@ -148,14 +102,6 @@ search_topic_items_dist <- function(couple, query="information retrieval", model
   res_items[1:n,]
 }
 
-#' @export
-items_affil_proportion <- function(items) {
-  ou_total <- items_affil(items)$Organization
-  ou_names <- maxplanckr::orgunit_names(ou_total)
-  ou_props <- table(ou_names)
-  sapply(ou_props, function(x) x/length(ou_total))
-}
-
 check_model <- function(model=NULL) {
   if(is.null(model)) {
     nomodel <- paste0("\tno model specified!\n",
@@ -190,13 +136,4 @@ topic_items <- function(couple, model="btm_all", topic=1) {
 
 items_subset <- function(data, items) {
   data[data$Id %in% items,]
-}
-
-items_affil <- function(items) {
-  if(!exists("sel_items_rel")) {
-    cat("load creators data!\n")
-    data(sel_items_rel, package="maxplanckr")
-  }
-  affils <- sel_items_rel$aut[sel_items_rel$aut$Item %in% items,]
-  affils[,c("Item", "Organization")]
 }

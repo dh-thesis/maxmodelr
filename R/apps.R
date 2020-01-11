@@ -1,4 +1,6 @@
-#' Search interface for queries based on different topic models
+#' topicsearch
+#'
+#' interface for querying different topic models
 #'
 #' @export
 topicsearch <- function(){

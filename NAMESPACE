@@ -3,6 +3,8 @@
 export(inst)
 export(inst_rds)
 export(items_affil_proportion)
+export(items_ctx_proportion)
+export(items_ous_proportion)
 export(load_couple)
 export(search_dist_items)
 export(search_topic_items)

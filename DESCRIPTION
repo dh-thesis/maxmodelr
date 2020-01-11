@@ -13,6 +13,7 @@ Depends:
 Encoding: UTF-8
 LazyData: true
 Imports:
+    dplyr,
     maxplanckr,
     philentropy,
     shiny,
