@@ -102,6 +102,7 @@ search_dist_items <- function(couple, query="information retrieval", model="btm_
   res_items <- query_items[match(query_res_items, query_items$Id),][c("Id","Label")]
   res_items <- tibble::add_column(res_items, "Dist"=query_res_probs)
   # /// only return the first n items /// #
+  if (n > c) n <- c
   res_items[1:n,]
 }
 
