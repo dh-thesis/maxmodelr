@@ -13,7 +13,9 @@ inst/infer/*
 !inst/infer/README.md
 
 inst/couple/*
-!inst/couple/README.md
+!inst/couple/model_k25.RDS
+!inst/couple/theta_k25.RDS
+!inst/couple/item_k25.RDS
 
 inst/window/*
 !inst/window/README.md
