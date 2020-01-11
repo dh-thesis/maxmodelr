@@ -6,6 +6,7 @@
 
 # ... by cloning the repository
 $ git clone https://github.com/dh-thesis/maxmodelr.git
+$ cd maxmodelr
 
 
 # PUBLICATION SEARCH
@@ -24,7 +25,7 @@ $ R
 # load topic coupling data (k = number of topics)
 > couple <- load_couple(k=25)
 > format(object.size(couple), units="MB")
-# [1] "1380.6 Mb" <-- be aware of this memory usage, you need some free RAM!
+# [1] "541 Mb" <-- be aware of this memory usage, you need some free RAM!
 
 # set search query
 > query <- "information retrieval"
@@ -44,9 +45,16 @@ $ R
 > search_dist_items(couple, query=query, model=model, n=n, c=c)
 
 # take all items with same topic as query
-# and compute js-divergence between thetas
+# and compute js-divergence between theta of items and query
 # return the first n items
-> search_topic_items_dist(couple, query=query, model=model, n=n, c=c)
+# !!
+# !! depending on the number of topics in the model, this means comparing lots of vectors
+# !! the lower the number of topics, the more publications are in the same topic
+# !! and need to be compared. it is suggested not to use this function with the
+# !! example coupling data provided in this repository with k = 25.
+# !! instead create coupling data with k >= 100 (see below)
+# !!
+> search_topic_items_dist(couple, query=query, model=model, n=n)
 
 
 # DATA PREPARATION
@@ -54,12 +62,6 @@ $ R
 # create models
 $ exec/runbtm > btm.log 2>&1
 $ exec/runlda > lda.log 2>&1
-
-# tune models
-$ exec/runtunes > tunes.log 2>&1
-
-# visualize lda models
-$ exec/runvis > ldavis.log 2>&1
 
 # infer titles
 $ exec/infer > infer.log 2>&1
