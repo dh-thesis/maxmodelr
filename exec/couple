@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo ""
-echo "    start inferring topic distributions of titles in corpus..."
+echo "    start coupling publication titles and topics..."
 echo ""
 Rscript data-raw/couple.R
 echo ""
