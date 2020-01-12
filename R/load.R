@@ -20,7 +20,7 @@ couple_paths <- function(k) {
 
 couple_names <- function(k) {
   fp_names <- list.files(inst("couple"), pattern=".RDS")
-  fp_names <- utlr::filter_paths(fp_names, pattern=paste0("k",k))
+  fp_names <- utlr::filter_paths(fp_names, pattern=paste0("k",k,".RDS"))
   gsub(paste0("_k",k,".RDS"),"",fp_names)
 }
 
