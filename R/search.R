@@ -22,7 +22,7 @@ search_topic_items <- function(couple, query="information retrieval", model="btm
 }
 
 #' @export
-search_dist_items <- function(couple, query="information retrieval", model="btm_all", n=10) {
+search_dist_items <- function(couple, query="information retrieval", model="btm_all", compare=100, n=10) {
   check_model(model)
   couple_model <- couple$model[[model]]
   # /// infer theta for query /// #
@@ -33,8 +33,8 @@ search_dist_items <- function(couple, query="information retrieval", model="btm_
   }
   # /// consider only topic of query with highest probability /// #
   query_topic <- which.max(query_theta)
-  # /// get the n most likely publications for given topic /// #
-  query_items <- topic_items_prob(couple, model=model, topic=query_topic, n=n)
+  # /// get items to compare by likeliness for given topic /// #
+  query_items <- topic_items_prob(couple, model=model, topic=query_topic, n=compare)
   if(!exists("sel_items")) {
     cat("load publication data!\n")
     data(sel_items, package="maxplanckr")
